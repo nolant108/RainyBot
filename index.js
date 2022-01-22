@@ -15,11 +15,21 @@ const client = new Discord.Client({
     ]
 })
 
-client.on("ready", () => {
+
+bot.on('ready', () => {
 
     console.log(`Logged in as ${client.user.tag}`)
 
-})
+
+    bot.user.setStatus('online')
+    bot.user.setPresence({
+        game: {
+            name: 'Hmmmm... Eating in the Cáfé with you!',
+            type: "STREAMING",
+            url: "https://www.twitch.tv/lofigurl"
+        }
+    });
+});
 
 
 client.on('guildMemberAdd', async(member) => {
