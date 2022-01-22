@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const { MessageEmbed } = require('discord.js');
 
 
-const TOKEN = "OTM0MTc0ODk3OTk4MDEyNDY2.YesQKw.lmccyMOgMtJXE8z1J8_m3RzffGQ";
+const TOKEN = "";
 
 
 const client = new Discord.Client({
@@ -24,7 +24,7 @@ client.on("ready", () => {
 
 client.on('guildMemberAdd', async(member) => {
 
-    const welcomeChannel = member.guild.channels.cache.find(c => c.name === 'welcome')
+    const welcomeChannel = member.guild.channels.cache.find(c => c.id === '931987685256609812')
     const memberCount = client.guilds.cache.get('930274869973770240').members.cache.filter(member => !member.user.bot).size
     const serverIcon = member.guild.iconURL({dynamic: true})
     
