@@ -16,18 +16,16 @@ const client = new Discord.Client({
 })
 
 
-bot.on('ready', () => {
+client.on('ready', () => {
 
     console.log(`Logged in as ${client.user.tag}`)
 
 
-    bot.user.setStatus('online')
-    bot.user.setPresence({
-        game: {
-            name: 'Hmmmm... Eating in the Cáfé with you!',
+    client.user.setStatus('online')
+    client.user.setActivity('Hmmmm... Eating in the Cáfé with you!', {
             type: "STREAMING",
             url: "https://www.twitch.tv/lofigurl"
-        }
+        
     });
 });
 
