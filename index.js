@@ -12,6 +12,8 @@ const client = new Discord.Client({
         "GUILD_MESSAGES",
         "GUILD_MEMBERS",
         "GUILD_EMOJIS_AND_STICKERS",
+        "DIRECT_MESSAGES",
+        "GUILD_MESSAGE_REACTIONS"
     ]
 })
 
@@ -28,6 +30,39 @@ client.on('ready', () => {
         
     });
 });
+
+client.on('guildMemberAdd', async(member) => {
+
+    const welcomeChannel = member.guild.channels.cache.find(c => c.id === '931987685256609812');
+    const memberCount = client.guilds.cache.get('930274869973770240').members.cache.filter(member => !member.user.bot).size
+    const serverIcon = member.guild.iconURL({dynamic: true});
+
+    const addMemEmbed = new MessageEmbed()
+	.setColor('RANDOM')
+	.setTitle(`NEW CAFE JOIN! | Welcome ${member.user.username}!`)
+	.setDescription(`Welcome to the Rainy Cafe, Please make yourself at home!`)
+	.setThumbnail(serverIcon)
+	.addFields(
+		{ name: 'Regular field title', value: 'Some value here' },
+		{ name: '\u200B', value: '\u200B' },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+	)
+	.setImage('https://i.imgur.com/AfFp7pu.png')
+	.setTimestamp()
+
+
+    const addRole = member.guild.roles.cache.find(r => r.id === `934189341381640252`);
+    member.roles.add(addRole);
+
+    welcomeChannel.send({ embeds: [addMemEmbed] });
+
+
+
+})
+
+
+/*
 
 
 client.on('guildMemberAdd', async(member) => {
@@ -56,5 +91,8 @@ client.on('guildMemberAdd', async(member) => {
     member.roles.add(addRole)
 
 });
+
+
+*/
 
 client.login(TOKEN);
