@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const { MessageEmbed } = require('discord.js');
 
 
-const TOKEN = "";
+const TOKEN = "OTM0MTc0ODk3OTk4MDEyNDY2.YesQKw.LA6OKTM1EmKNslAyMIF6t4Q9W-w";
 
 
 const client = new Discord.Client({
@@ -24,7 +24,7 @@ client.on('ready', () => {
     client.user.setStatus('online')
     client.user.setActivity('Hmmmm... Eating in the Cáfé with you!', {
             type: "STREAMING",
-            url: "https://www.twitch.tv/lofigurl"
+            url: "https://www.twitch.tv/lofi_box"
         
     });
 });
@@ -52,7 +52,7 @@ client.on('guildMemberAdd', async(member) => {
 
     welcomeChannel.send({embeds: [joinEmbed]})
 
-    const addRole = member.guild.roles.cache.find(r => r.id === `934173319538806784`)
+    const addRole = member.guild.roles.cache.find(r => r.id === `934189341381640252`)
     member.roles.add(addRole)
 
 });
