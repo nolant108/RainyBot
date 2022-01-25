@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const { MessageEmbed } = require('discord.js');
 
 
-const TOKEN = "OTM0MTc0ODk3OTk4MDEyNDY2.YesQKw.LA6OKTM1EmKNslAyMIF6t4Q9W-w";
+const TOKEN = "";
 
 
 const client = new Discord.Client({
@@ -43,14 +43,12 @@ client.on('guildMemberAdd', async(member) => {
 	.setDescription(`Welcome to the Rainy Cafe, Please make yourself at home!`)
 	.setThumbnail(serverIcon)
 	.addFields(
-		{ name: 'Regular field title', value: 'Some value here' },
-		{ name: '\u200B', value: '\u200B' },
-		{ name: 'Inline field title', value: 'Some value here', inline: true },
-		{ name: 'Inline field title', value: 'Some value here', inline: true },
-	)
-	.setImage('https://i.imgur.com/AfFp7pu.png')
+		{ name: 'For Rules:', value: `Please go to the rules channel <#931719821152878602>`, inline: true },
+		{ name: 'Want Roles?', value: `Go to the <#930589634419888168> channel, and grab some awesome roles!`, inline: true },
+        { name: '\u200B', value: '\u200B' }
+        )
+    .addField('Current Members Here!', `${memberCount}`, true)
 	.setTimestamp()
-
 
     const addRole = member.guild.roles.cache.find(r => r.id === `934189341381640252`);
     member.roles.add(addRole);
