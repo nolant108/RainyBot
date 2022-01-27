@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js');
 const fs = require('fs');
 
 
-
+//TODO Remove Token when pushing to PROD!
 const TOKEN = "";
 
 const prefix = '+rain ';
@@ -55,7 +55,7 @@ client.on('guildMemberAdd', async(member) => {
     .addField('Current Members Here!', `${memberCount}`, true)
 	.setTimestamp()
 
-    const addRole = member.guild.roles.cache.find(r => r.id === `934189341381640252`);
+    const addRole = member.guild.roles.cache.find(r => r.id === '934189341381640252');
     member.roles.add(addRole);
 
     welcomeChannel.send({ embeds: [addMemEmbed] });
@@ -88,6 +88,8 @@ client.on('messageCreate', message =>{
     if(command === 'help'){
         client.commands.get('help').execute(message, args);
     } 
+
+
 });
 
 

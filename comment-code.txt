@@ -32,3 +32,11 @@ client.on('guildMemberAdd', async(member) => {
 */
 
 
+ /*
+    if (command === 'play'){
+        client.commands.get('play').execute(message, args);
+    } else if (command === 'leave'){
+        client.commands.get('leave').execute(message, args);
+    }
+
+    */
